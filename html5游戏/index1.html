@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="index1.css" type="text/css" />
+<title>HTML5游戏开发</title>
+</head>
+
+<body>
+<div id="background">
+        <div id="paddleA" class="paddle"></div>
+        <div id="paddleB" class="paddle"></div>
+        <div id="ball"></div>
+</div>
+</body>
+<script type="text/javascript" src="jquery-1.3.1.js"></script>
+<script type="text/javascript">
+var pingpong={}
+pingpong.pressedKeys = [];
+var KEY={
+	W:87,
+	S:83,
+	UP:38,
+	DOWN:40
+	}
+$(function(){
+	pingpong.timer = setInterval(game,30);
+	$(document).keydown(function(e){
+	pingpong.pressedKeys[e.which]= true;
+	});
+	$(document).keyup(function(e){
+	pingpong.pressedKeys[e.which]=false;
+	});
+	
+	});
+     function game(){
+		 key();
+		 moveBall();
+		 
+		 }
+      function key(){
+
+	  if(pingpong.pressedKeys[KEY.W]){
+			var movetop = parseInt($("#paddleB").css("top"));
+			$("#paddleB").css("top",movetop-5);
+	  }
+	  if(pingpong.pressedKeys[KEY.S]){
+			var movetop = parseInt($("#paddleB").css("top"));
+			$("#paddleB").css("top",movetop+5);
+	  }
+	  if(pingpong.pressedKeys[KEY.UP]){
+			var movetop = parseInt($("#paddleA").css("top"));
+			$("#paddleA").css("top",movetop-5);
+	  }
+	  if(pingpong.pressedKeys[KEY.DOWN]){
+			var movetop = parseInt($("#paddleA").css("top"));
+			$("#paddleA").css("top",movetop+5);
+	  }
+			
+}
+</script>
+<script type="text/javascript" src="ball.js"></script>
+<script type="text/javascript" src="luoji1.js"></script>
+</html>

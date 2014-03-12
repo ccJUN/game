@@ -1,0 +1,28 @@
+#background{
+	width:400px;
+	height:200px;
+	position:relative;
+	overflow:hidden;
+	background-color:#CCC;
+	color:#000;
+}
+.paddle{
+	background:#F00;
+	top:70px;
+	left:50px;
+	position:absolute;
+	width:20px;
+	height:30px;
+}
+#paddleB{
+	left:320px;
+}
+#ball{
+	background:#0F6;
+	width:20px;
+	height:20px;
+	border-radius:10px;
+	position:absolute;
+	left:150px;
+	top:70px;
+}
